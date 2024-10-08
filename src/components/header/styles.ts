@@ -4,17 +4,20 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 24px;
-`
+  /* margin-bottom: 32px; */
+  border-bottom: 1px solid #d9d9e0;
+  background: #f9f9fb;
+  padding: 8px;
+  border-radius: 8px;
+`;
 
 export const Logo = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 export const NavLinksContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-`
+`;
