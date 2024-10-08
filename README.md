@@ -39,5 +39,5 @@ Bibliotecas utilizadas:
 
 - Radix UI;
 - React Hook Form;
-- Yup;
+- Zod;
 - Styled Components;
