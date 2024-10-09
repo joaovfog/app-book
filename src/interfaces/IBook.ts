@@ -3,5 +3,5 @@ export interface IBook {
   name: string;
   author_id: number;
   author_name?: string;
-  pages: number;
+  pages: string | null;
 }

@@ -5,9 +5,13 @@ import { Layout } from "./layout/layout";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <Layout />,
     children: [
+      {
+        path: "/",
+        element: <Book />,
+      },
       {
         path: "/books",
         element: <Book />,

@@ -1,5 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
+import { toast } from "react-toastify";
+
 import { IBook } from "../interfaces/IBook";
 
 interface BookContextType {
@@ -24,6 +26,8 @@ export const BookProvider: React.FC<{ children: ReactNode }> = ({
 
     setBooks(updateBooks);
     localStorage.setItem("books", JSON.stringify(updateBooks));
+
+    toast.success("Livro cadastrado com sucesso!");
   };
 
   const removeBook = (bookId: number) => {
@@ -31,6 +35,8 @@ export const BookProvider: React.FC<{ children: ReactNode }> = ({
 
     setBooks(updatedBooks);
     localStorage.setItem("books", JSON.stringify(updatedBooks));
+
+    toast.success("Livro excluído com sucesso!");
   };
 
   return (

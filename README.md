@@ -41,3 +41,4 @@ Bibliotecas utilizadas:
 - React Hook Form;
 - Zod;
 - Styled Components;
+- React Toastify;

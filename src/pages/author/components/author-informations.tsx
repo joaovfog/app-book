@@ -10,22 +10,32 @@ export const AuthorInformations = ({ author }: AuthorInformationProps) => {
     return (
         <Flex direction="column" gap="3">
             <Blockquote>
-                <Text
-                    as="div"
-                    size="2"
-                    mb="1"
-                    weight="bold"
-                >
-                    Nome: {author.name}
-                </Text>
-                <Text
-                    as="div"
-                    size="2"
-                    mb="1"
-                    weight="bold"
-                >
-                    E-mail: {author.email || 'não informado'}
-                </Text>
+                <Flex gap="1">
+                    <Text
+                        as="div"
+                        size="2"
+                        mb="1"
+                        weight="bold"
+                    >
+                        Nome:
+                    </Text>
+                    <Text size="2">
+                        {author.name}
+                    </Text>
+                </Flex>
+                <Flex gap="1">
+                    <Text
+                        as="div"
+                        size="2"
+                        mb="1"
+                        weight="bold"
+                    >
+                        E-mail:
+                    </Text>
+                    <Text size="2">
+                        {author.email || 'não informado'}
+                    </Text>
+                </Flex>
             </Blockquote>
         </Flex>
     )

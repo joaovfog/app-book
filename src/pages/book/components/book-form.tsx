@@ -53,9 +53,9 @@ export const BookForm = ({ form, formState }: BookFormProps) => {
                 N° de páginas (opcional)
             </Text>
             <TextField.Root
-                {...form.register("pages", { valueAsNumber: true })}
+                {...form.register("pages")}
                 placeholder="Digite o n° de páginas"
-                type="number"
+                type="text"
             />
             {formState.errors.pages && (
                 <Text color="red" size="1">

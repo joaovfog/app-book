@@ -22,7 +22,7 @@ export const Book = () => {
   const [bookToDelete, setBookToDelete] = useState<number | null>(null);
   const [bookToView, setBookToView] = useState<IBook | null>(null);
 
-  const columns = ["ID", "Nome", "Autor", "Páginas", "Ação"];
+  const columns = ["ID", "Nome", "Autor", "Páginas", "Ações"];
 
   const onSubmit = async (data: any) => {
     const isValid = await form.trigger();
@@ -71,7 +71,14 @@ export const Book = () => {
             {bookToView ? (
               <Flex gap="3" justify="end">
                 <Dialog.Close>
-                  <Button variant="outline" color="gray">
+                  <Button
+                    variant="outline"
+                    color="gray"
+                    onClick={() => {
+                      setBookToView(null)
+                      setDialogOpen(false)
+                    }}
+                  >
                     Fechar
                   </Button>
                 </Dialog.Close>
@@ -106,7 +113,7 @@ export const Book = () => {
             book.id,
             book.name,
             book.author_name,
-            book.pages,
+            book.pages === "0" ? "-" : book.pages,
             <Flex gap="2">
               <Button
                 variant="soft"

@@ -1,5 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
+import { toast } from "react-toastify";
+
 import { IAuthor } from "../interfaces/IAuthor";
 
 interface AuthorContextType {
@@ -24,6 +26,8 @@ export const AuthorProvider: React.FC<{ children: ReactNode }> = ({
 
     setAuthors(updateAuthors);
     localStorage.setItem("authors", JSON.stringify(updateAuthors));
+
+    toast.success("Autor cadastrado com sucesso!");
   };
 
   const removeAuthor = (authorId: number) => {
@@ -31,6 +35,8 @@ export const AuthorProvider: React.FC<{ children: ReactNode }> = ({
 
     setAuthors(updatedAuthors);
     localStorage.setItem("authors", JSON.stringify(updatedAuthors));
+
+    toast.success("Autor excluído com sucesso!");
   };
 
   return (

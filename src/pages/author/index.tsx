@@ -70,7 +70,14 @@ export const Author = () => {
                         {authorToView ? (
                             <Flex gap="3" justify="end">
                                 <Dialog.Close>
-                                    <Button variant="outline" color="gray">
+                                    <Button 
+                                        variant="outline" 
+                                        color="gray" 
+                                        onClick={() => {
+                                            setAuthorToView(null)
+                                            setDialogOpen(false)
+                                        }}
+                                    >
                                         Fechar
                                     </Button>
                                 </Dialog.Close>

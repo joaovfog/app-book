@@ -10,7 +10,7 @@ import { IBook } from "../../../interfaces/IBook";
 const bookSchema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
   author_id: z.number().min(1, "Autor é obrigatório"),
-  pages: z.number(),
+  pages: z.string(),
 });
 
 type BookFormData = z.infer<typeof bookSchema>;
@@ -22,7 +22,7 @@ export const useBook = () => {
   const form = useForm<BookFormData>({
     resolver: zodResolver(bookSchema),
     defaultValues: {
-      pages: 0,
+      pages: "",
       author_id: 0,
     },
   });
@@ -39,6 +39,7 @@ export const useBook = () => {
       id: bookId,
       author_id: Number(data.author_id),
       author_name: selectedAuthor ? selectedAuthor.name : "Autor desconhecido",
+      pages: data.pages || "0",
     };
 
     addBook(bookToAdd);

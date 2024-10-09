@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 export const Header = () => {
   const location = useLocation();
 
-  const isBookPage = location.pathname === "/books";
+  const isBookPage = location.pathname === "/books" || location.pathname === "/";
   const isAuthorPage = location.pathname === "/authors";
 
   return (
