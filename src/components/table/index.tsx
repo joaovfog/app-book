@@ -23,7 +23,7 @@ export const TableGrid = ({ columns, rows }: TableGridProps) => {
           {rows.map((row, rowIndex) => (
             <Table.Row key={rowIndex}>
               {row.map((cell: any, cellIndex: number) => (
-                <Table.Cell key={cellIndex}>{cell ?? "-"}</Table.Cell>
+                <Table.Cell key={cellIndex}>{cell}</Table.Cell>
               ))}
             </Table.Row>
           ))}
